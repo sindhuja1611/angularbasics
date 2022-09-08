@@ -1,0 +1,28 @@
+<h1>Loading...</h1> 
+<router-outlet> </router-outlet>
+<app-first></app-first>
+<h1> {{ name }}</h1>
+<h2>NUMBER INTERPOLATION   Addition of two Numbers hai: {{ add()}}</h2>
+<h2>Property binding Image</h2>
+<img [src]="imgurl"/>
+<h2>Event binding Image</h2>
+<button (click)="onSave($event)">Save</button>
+<h2>Two-way Binding Example</h2>    
+   <input [(ngModel)]="Fullname" /> <br/><br/>    
+<p> {{Fullname}} </p>  
+<h3>  Using Input: Student Name: {{Student}}</h3>
+
+
+<app-first [stud]="currentwinner"></app-first>
+
+<app-first (opt)="addItem($event)"></app-first>
+
+<ul>
+   <li *ngFor="let x of items">{{x}}</li>
+</ul>
+<app-io></app-io>
+
+<hr>
+<label>Please Enter Parent Name:</label>
+<input  type="text" [(ngModel)]="Parent"/>
+
