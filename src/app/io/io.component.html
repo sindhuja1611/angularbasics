@@ -1,5 +1,36 @@
 <p>io works!</p>
 <h2>
-    Parent Name Is:{{ParentName
-    }}
+Directives Concepts...
 </h2>
+
+<div *ngIf="showusers">
+<h1 *ngFor="let user of users" [ngClass]="'even'" (click)="selecteduser=user.name">{{user.name}}</h1>
+</div>
+
+<div [ngSwitch]="selecteduser">
+    <h1 *ngSwitchCase="'Sarvesh'"> Hai Sarvesh!</h1>
+    <h1 *ngSwitchCase="'Hamrutha'"> Hai Hamrutha!</h1>
+    <h1 *ngSwitchCase="'Sindhu'"> Hai Sindhu!</h1>
+    <h1 *ngSwitchCase="'Harsith'"> Hai Harsith!</h1>
+    <h1 *ngSwitchDefault="'default'"> No one is here!</h1>
+
+</div>
+
+
+<h1>TODO LIST</h1>
+<input type="text "  placeholder="Enter New Task" #task/>
+<br>
+<br>
+<button (click)="addTask(task.value)"> Add New Task</button>
+<br>
+<br>
+<ul *ngFor="let item of list">
+    <li>{{item.name}} <button (click)="removeTask(item.id)">Remove</button></li>
+</ul>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary">Left</button>
+    <button type="button" class="btn btn-primary">Middle</button>
+    <button type="button" class="btn btn-primary">Right</button>
+  </div>
+  
